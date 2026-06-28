@@ -13,6 +13,9 @@ import Dashboard from './pages/Dashboard';
 import Students from './pages/Students';
 import AddStudent from './pages/AddStudent';
 import EditStudent from './pages/EditStudent';
+import Grades from './pages/Grades';
+import ManageGrades from './pages/ManageGrades';
+import ReportCard from './pages/ReportCard';
 
 /**
  * Main App Component
@@ -36,6 +39,9 @@ function App() {
           <Route path="/students" element={<Students />} />
           <Route path="/students/add" element={<AddStudent />} />
           <Route path="/students/edit/:id" element={<EditStudent />} />
+          <Route path="/grades" element={<Grades />} />
+          <Route path="/grades/manage/:studentId" element={<ManageGrades />} />
+          <Route path="/grades/report/:studentId" element={<ReportCard />} />
         </Route>
       </Routes>
     </Router>

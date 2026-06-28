@@ -263,3 +263,26 @@ body {
   color: var(--text-color);
   margin-top: 0.5rem;
 }
+
+/* Grade Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+}
+.badge-success { background-color: #dcfce7; color: #15803d; }
+.badge-info { background-color: #e0f2fe; color: #0369a1; }
+.badge-warning { background-color: #fef9c3; color: #a16207; }
+.badge-danger { background-color: #fee2e2; color: #b91c1c; }
+.badge-secondary { background-color: #f1f5f9; color: #475569; }
+
+/* Print Media Query for Report Cards */
+@media print {
+  body { background-color: #ffffff; color: #000000; }
+  .navbar, .no-print, button, .btn { display: none !important; }
+  .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  .report-card { border: none !important; box-shadow: none !important; padding: 0 !important; }
+}

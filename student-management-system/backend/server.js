@@ -6,6 +6,7 @@ import connectDB from './config/db.js';
 // Import route modules
 import authRoutes from './routes/authRoutes.js';
 import studentRoutes from './routes/studentRoutes.js';
+import gradeRoutes from './routes/gradeRoutes.js';
 
 // Load environment variables from .env file into process.env
 dotenv.config();
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 // Mount specialized route handlers under dedicated API URL prefixes
 app.use('/api/auth', authRoutes);
 app.use('/api/students', studentRoutes);
+app.use('/api/grades', gradeRoutes);
 
 // Custom Global Error Handling Middleware for uncaught errors
 app.use((err, req, res, next) => {

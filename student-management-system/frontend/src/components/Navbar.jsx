@@ -57,6 +57,12 @@ const Navbar = () => {
             >
               Add Student
             </Link>
+            <Link 
+              to="/grades" 
+              className={`nav-link ${location.pathname.startsWith('/grades') ? 'active' : ''}`}
+            >
+              📊 Grades & Reports
+            </Link>
             <button onClick={handleLogout} className="nav-btn">
               Logout
             </button>
