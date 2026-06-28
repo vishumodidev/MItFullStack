@@ -9,8 +9,9 @@ export default defineConfig({
     // Proxy API requests during development to backend server
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        secure: false
       }
     }
   }

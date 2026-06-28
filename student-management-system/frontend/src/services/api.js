@@ -5,7 +5,7 @@ import axios from 'axios';
  * Automatically points to backend API base URL.
  */
 const API = axios.create({
-  baseURL: '/api' // Uses relative path; Vite dev proxy or production host handles host mapping
+  baseURL: 'http://localhost:5001/api'
 });
 
 /**

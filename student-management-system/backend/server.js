@@ -16,8 +16,21 @@ connectDB();
 // Initialize Express application instance
 const app = express();
 
-// Middleware: Enable Cross-Origin Resource Sharing (CORS) to allow requests from React frontend
-app.use(cors());
+// Middleware: Global CORS handler for all origins, credentials, and preflight OPTIONS requests
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  // Allow request origin if present, or fallback to localhost:3000
+  res.header('Access-Control-Allow-Origin', origin || 'http://localhost:3000');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+
+  // Immediately respond 200 OK to browser preflight OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
 
 // Middleware: Parse incoming requests with JSON payloads (replacing body-parser)
 app.use(express.json());
